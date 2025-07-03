@@ -30,6 +30,7 @@ This project is a fullstack web application for simulating and logging 6-player 
 ---
 
 ## Screenshots
+```
 
 ![image](https://github.com/user-attachments/assets/5f48b848-6128-44f8-a39d-709b0e418c5c)
 ![image](https://github.com/user-attachments/assets/a96a6f81-70ef-4f6e-a9bd-f55e938c6d01)
@@ -41,6 +42,7 @@ This project is a fullstack web application for simulating and logging 6-player 
 ## Project Structure
 
 ```
+
 poker-game/
   backend/      # FastAPI backend, PokerKit, PostgreSQL access, API, tests
   frontend/     # Next.js frontend, React, shadcn/ui, tests
