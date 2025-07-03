@@ -166,6 +166,7 @@ poetry run uvicorn app.main:app --reload
 - Ensure `.gitignore` includes all of the above.
 
 ---
+![image](https://github.com/user-attachments/assets/b1efab0d-30c2-406d-9555-5f6b2e89c3e3)
 
 ## Troubleshooting
 
