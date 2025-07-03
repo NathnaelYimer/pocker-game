@@ -1,10 +1,13 @@
+Here is a **polished, professional README.md** for your Fullstack Poker Coding Exercise, including your provided screenshots and all best practices:
+
+---
 
 ```markdown
 # Texas Hold'em Poker Game – Fullstack Coding Exercise
 
 ## Overview
 
-This project is a fullstack web application for simulating and logging 6-player Texas Hold'em poker hands. It is designed as a coding exercise to demonstrate proficiency in modern web development, backend design, and end-to-end testing.
+This project is a fullstack web application for simulating and logging 6-player Texas Hold'em poker hands. It demonstrates modern web development, backend design, and end-to-end testing.
 
 - **Frontend:** Next.js, React, TypeScript, shadcn/ui
 - **Backend:** FastAPI, Python, PostgreSQL, PokerKit, Poetry
@@ -28,7 +31,10 @@ This project is a fullstack web application for simulating and logging 6-player 
 
 ## Screenshots
 
-<!-- Optionally add screenshots here -->
+![image](https://github.com/user-attachments/assets/5f48b848-6128-44f8-a39d-709b0e418c5c)
+![image](https://github.com/user-attachments/assets/a96a6f81-70ef-4f6e-a9bd-f55e938c6d01)
+![image](https://github.com/user-attachments/assets/96deaa34-ccd1-44da-9659-825923a60d97)
+![image](https://github.com/user-attachments/assets/7d571ee0-f047-414d-9824-27ab8f46c308)
 
 ---
 
@@ -166,7 +172,6 @@ poetry run uvicorn app.main:app --reload
 - Ensure `.gitignore` includes all of the above.
 
 ---
-![image](https://github.com/user-attachments/assets/b1efab0d-30c2-406d-9555-5f6b2e89c3e3)
 
 ## Troubleshooting
 
@@ -205,7 +210,7 @@ This project is for educational and evaluation purposes only.
 
 ## Author
 
-- [NathnaelYimer](https://github.com/NathnaelYimer)
+- [Nathnael Yimer](https://github.com/NathnaelYimer)
 
 ---
 
@@ -217,3 +222,7 @@ This project is for educational and evaluation purposes only.
 - [Next.js](https://nextjs.org/)
 ```
 
+---
+
+**Replace `[Your Name]` with your actual name or GitHub profile.**  
+This README will make your project look professional and easy to use for any reviewer or future maintainer!
