@@ -1,36 +1,218 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+```markdown
+# Texas Hold'em Poker Game – Fullstack Coding Exercise
+
+## Overview
+
+This project is a fullstack web application for simulating and logging 6-player Texas Hold'em poker hands. It is designed as a coding exercise to demonstrate proficiency in modern web development, backend design, and end-to-end testing.
+
+- **Frontend:** Next.js, React, TypeScript, shadcn/ui
+- **Backend:** FastAPI, Python, PostgreSQL, PokerKit, Poetry
+- **Testing:** Jest, Playwright, Pytest
+- **Deployment:** Docker Compose
+
+---
+
+## Features
+
+- Play a full 6-player Texas Hold'em hand with all standard actions (Fold, Check, Call, Bet, Raise, Allin)
+- All actions are logged and displayed in real time
+- Hand history is saved to a PostgreSQL database and displayed in the UI
+- RESTful API with repository pattern and raw SQL (no ORM)
+- PokerKit used for hand evaluation and win/loss calculation
+- Modern, responsive UI using shadcn/ui
+- End-to-end and unit tests for both frontend and backend
+- Fully containerized with Docker Compose
+
+---
+
+## Screenshots
+
+<!-- Optionally add screenshots here -->
+
+---
+
+## Project Structure
+
+```
+poker-game/
+  backend/      # FastAPI backend, PokerKit, PostgreSQL access, API, tests
+  frontend/     # Next.js frontend, React, shadcn/ui, tests
+  docker-compose.yml
+```
+
+---
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- [Docker](https://www.docker.com/get-started)
+- [Docker Compose](https://docs.docker.com/compose/)
+- (For local dev) [Node.js](https://nodejs.org/) and [Poetry](https://python-poetry.org/)
+
+---
+
+### 1. Clone the Repository
+
+```sh
+git clone https://github.com/NathnaelYimer/pocker-game.git
+cd pocker-game
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 2. Environment Variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+#### Frontend
 
-## Learn More
+Create a `.env` file in the `frontend/` directory:
 
-To learn more about Next.js, take a look at the following resources:
+```
+NEXT_PUBLIC_API_URL=http://localhost:8000
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+#### Backend
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+No special environment variables are required for local Docker Compose.  
+If running backend locally, ensure your `DATABASE_URL` is set (see `backend/app/main.py` for default).
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 3. Start the Application
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```sh
+docker compose up -d
+```
+
+- Frontend: [http://localhost:3000](http://localhost:3000)
+- Backend API: [http://localhost:8000/docs](http://localhost:8000/docs) (Swagger UI)
+
+---
+
+### 4. Usage
+
+- Set player stacks and start a new hand.
+- Use the action buttons (Fold, Check, Call, Bet, Raise, Allin) to play through a hand.
+- All actions are logged in the play log.
+- When the hand is complete, it is saved to the database and appears in the hand history.
+
+---
+
+## Testing
+
+### Backend
+
+```sh
+cd backend
+poetry install
+poetry run pytest
+poetry run flake8 app/
+```
+
+### Frontend
+
+```sh
+cd frontend
+npm install
+npm run test         # Unit tests
+npx playwright install
+npm run test:e2e     # End-to-end tests
+```
+
+---
+
+## Development
+
+### Frontend (local dev)
+
+```sh
+cd frontend
+npm install
+npm run dev
+```
+
+### Backend (local dev)
+
+```sh
+cd backend
+poetry install
+poetry run uvicorn app.main:app --reload
+```
+
+- Make sure PostgreSQL is running and accessible.
+
+---
+
+## Deployment
+
+- The app is fully containerized.  
+- To deploy, run:
+  ```sh
+  docker compose up -d
+  ```
+- No manual configuration is required after startup.
+
+---
+
+## Cleaning Up Before Submission
+
+- Remove all build artifacts:
+  - `frontend/node_modules`
+  - `backend/.venv`
+  - `backend/__pycache__`
+  - `backend/.pytest_cache`
+  - Any `.env` files (but keep `.env.example`)
+- Ensure `.gitignore` includes all of the above.
+
+---
+
+## Troubleshooting
+
+- **Frontend not connecting to backend?**
+  - Ensure `.env` in `frontend/` points to the correct backend URL.
+  - Make sure `frontend/app/api/hands/route.ts` does NOT exist.
+- **Database errors?**
+  - Check Docker Compose logs: `docker compose logs db`
+- **Tests failing?**
+  - Ensure all dependencies are installed and services are running.
+
+---
+
+## Acceptance Criteria Checklist
+
+- [x] Users can play hands to completion
+- [x] Hands are saved in the database and loaded after completion
+- [x] Hand history is shown by fetching from the backend via RESTful API
+- [x] RESTful API follows best practices
+- [x] At least one integration/E2E test for frontend
+- [x] Game logic is implemented on client-side and matches server validation
+- [x] Game logic is separated from UI logic
+- [x] Entities use @dataclass
+- [x] Repository pattern for data storage/retrieval
+- [x] Win/loss is calculated correctly
+- [x] PEP8 compliance
+- [x] Docker Compose works from the root
+
+---
+
+## License
+
+This project is for educational and evaluation purposes only.
+
+---
+
+## Author
+
+- [Your Name](https://github.com/NathnaelYimer)
+
+---
+
+## Acknowledgements
+
+- [PokerKit](https://github.com/uoftcprg/pokerkit)
+- [shadcn/ui](https://ui.shadcn.com/)
+- [FastAPI](https://fastapi.tiangolo.com/)
+- [Next.js](https://nextjs.org/)
+```
+
