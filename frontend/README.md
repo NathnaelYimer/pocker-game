@@ -226,5 +226,3 @@ This project is for educational and evaluation purposes only.
 
 ---
 
-**Replace `[Your Name]` with your actual name or GitHub profile.**  
-This README will make your project look professional and easy to use for any reviewer or future maintainer!
