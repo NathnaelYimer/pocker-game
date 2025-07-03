@@ -224,5 +224,5 @@ This project is for educational and evaluation purposes only.
 - [Next.js](https://nextjs.org/)
 ```
 
----
+
 
