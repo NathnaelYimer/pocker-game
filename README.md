@@ -222,7 +222,7 @@ This project is for educational and evaluation purposes only.
 - [shadcn/ui](https://ui.shadcn.com/)
 - [FastAPI](https://fastapi.tiangolo.com/)
 - [Next.js](https://nextjs.org/)
-```
+
 
 
 
