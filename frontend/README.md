@@ -204,7 +204,7 @@ This project is for educational and evaluation purposes only.
 
 ## Author
 
-- [Your Name](https://github.com/NathnaelYimer)
+- [NathnaelYimer](https://github.com/NathnaelYimer)
 
 ---
 
